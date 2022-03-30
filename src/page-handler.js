@@ -191,8 +191,12 @@ class PageHandler {
             try {
                 const loaded = JSON.parse(JSON.parse(await script.evaluate((/** @type {any} */ s) => s.innerHTML)).apiCache);
 
+        log.info(loaded);
+                
                 for (const key in loaded) { // eslint-disable-line
+                            log.info('111');
                     if (key.includes('FullRenderQuery') && loaded[key].property) {
+                        log.info('111222');
                         await this.extendOutputFunction(loaded[key].property, {
                             request,
                             page,
