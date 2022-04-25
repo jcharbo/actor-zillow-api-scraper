@@ -242,7 +242,7 @@ Apify.main(async () => {
         handlePageFunction: async (context) => {
             const { page, request, session, response } = context;
             const pageHandler = new PageHandler(context, globalContext, extendOutputFunction);
-
+console.log('processing page ' + page.url())
             if (!response || pageHandler.isOverItems()) {
                 if (!response) {
                     throw new Error('No response from page');
