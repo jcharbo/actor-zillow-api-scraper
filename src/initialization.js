@@ -65,7 +65,7 @@ const getInitializedStartUrls = (input, rq) => async () => {
         const term = input.search.trim();
 
         await rq.addRequest({
-            url: 'https://www.zillow.com',
+            url: 'https://www.zillow.com/homes/sold/70769_rb/',
             uniqueKey: `${term}`,
             userData: {
                 label: LABELS.SEARCH,
