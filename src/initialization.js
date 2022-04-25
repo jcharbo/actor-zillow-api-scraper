@@ -132,7 +132,7 @@ const getInitializedStartUrls = (input, rq) => async () => {
                 const cleanZip = `${zipcode}`.replace(/[^\d]+/g, '');
 
                 const result = await rq.addRequest({
-                    url: `https://www.zillow.com/homes/${cleanZip}_rb/`,
+                    url: `https://www.zillow.com/homes/sold/${cleanZip}_rb/`,
                     uniqueKey: `ZIP${cleanZip}`,
                     userData: {
                         label: LABELS.QUERY,
