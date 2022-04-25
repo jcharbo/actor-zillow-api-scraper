@@ -435,38 +435,46 @@ console.log(  page.url())
         const btn = 'button#search-icon';
 
         await page.waitForRequest((req) => req.url().includes('/login'));
-
+console.log('b1')
+        console.log(page.url())
         await Promise.all([
             page.waitForSelector(text),
             page.waitForSelector(btn),
         ]);
-
+        console.log('b2')
+console.log(page.url())
         await page.focus(text);
         await Promise.all([
             page.waitForResponse((res) => res.url().includes('suggestions')),
             page.type(text, request.userData.term, { delay: 150 }),
         ]);
-
+        console.log('b3')
+console.log(page.url())
         try {
             await Promise.all([
                 page.waitForNavigation({ timeout: 10000 }),
                 page.tap(btn),
             ]);
+            console.log(page.url())
         } catch (/** @type {any} */ e) {
             log.debug(e.message);
-
+            console.log('b4')
+console.log(page.url())
             const interstitial = await page.$$('#interstitial-title');
             if (!interstitial.length) {
                 session.retire();
                 throw new Error('Search didn\'t redirect, retrying...');
             } else {
                 const skip = await page.$x('//button[contains(., "Skip")]');
-
+                console.log('b5')
+console.log(page.url())
                 try {
                     await Promise.all([
                         page.waitForNavigation({ timeout: 25000 }),
                         skip[0].click(),
                     ]);
+                    console.log('b6')
+                    console.log(page.url())
                 } catch (/** @type {any} */ er) {
                     log.debug(`Insterstitial`, { message: er.message });
                     throw new Error('Search page didn\'t redirect in time');
