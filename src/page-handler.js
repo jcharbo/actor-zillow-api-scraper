@@ -270,12 +270,14 @@ console.log(  page.url())
                 log.info(`Searchsssing for "${term}"`);
                 await this._waitForSearchPageToLoad();
             }
-
+console.log('aaa1')
+            console.log(  page.url())
             const [pageQs, loadedQs] = await Promise.all([
                 this._getPageQs(),
                 this.pendingPromise,
             ]);
-
+            console.log('aaa3')
+console.log(  page.url())
             const merged = this._getMergedSearchResults([
                 loadedQs?.result,
                 pageQs,
@@ -494,7 +496,8 @@ console.log(  page.url())
      */
     async _getPageQs() {
         const { page } = this.context;
-
+        console.log('aa5')
+console.log(  page.url())
         return page.evaluate(() => {
             const pageQsElement = document.querySelector(
                 'script[data-zrr-shared-data-key="mobileSearchPageStore"]',
