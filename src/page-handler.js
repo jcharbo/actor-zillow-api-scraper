@@ -263,7 +263,7 @@ class PageHandler {
      */
     async handleQueryAndSearchPage(label) {
         const { request, session, page } = this.context;
-
+console.log(  page.url()
         try {
             if (label === LABELS.SEARCH) {
                 const { term } = request.userData;
@@ -280,7 +280,7 @@ class PageHandler {
                 loadedQs?.result,
                 pageQs,
             ]);
-
+console.log(  page.url()
             const containsResults = this._validateQueryStatesResults(merged.results, merged.categoryTotals);
 
             if (!containsResults) {
@@ -288,11 +288,11 @@ class PageHandler {
                 // when it's an error, this check won't be reached
                 return;
             }
-
+console.log(  page.url()
             // the loaded queryState is usually better than the one from page load
             const queryState = loadedQs?.searchQueryState
                 ?? pageQs.queryState;
-
+console.log(  page.url()
             await this._addZpidsRequest(
                 merged.results,
                 page.url(),
@@ -668,6 +668,7 @@ class PageHandler {
 
             log.debug(`Enqueuing pagination page number ${i} for url: ${url.toString()}`, { uniqueKey });
 
+            url=url.replace('/homes/for_sale','/homes/sold')
             await requestQueue.addRequest({
                 url: url.toString(),
                 userData: {
