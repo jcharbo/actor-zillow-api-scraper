@@ -194,9 +194,7 @@ class PageHandler {
        
                 
                 for (const key in loaded) { // eslint-disable-line
-                            log.info('111');
-                    if (key.includes('FullRenderQuery') && loaded[key].property) {
-                        log.info('111222');
+                     if (key.includes('FullRenderQuery') && loaded[key].property) {
                         await this.extendOutputFunction(loaded[key].property, {
                             request,
                             page,
@@ -268,8 +266,6 @@ class PageHandler {
         try {
             if (label === LABELS.SEARCH) {
                 const { term } = request.userData;
-                log.info(`asdefasdfasdf for "${page.url()}"`);
-                log.info(page)
                 log.info(`Searchsssing for "${term}"`);
                 await this._waitForSearchPageToLoad();
             }
