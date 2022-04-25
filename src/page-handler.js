@@ -268,7 +268,8 @@ class PageHandler {
         try {
             if (label === LABELS.SEARCH) {
                 const { term } = request.userData;
-                log.info(`asdefasdfasdf for "${page.url}"`);
+                log.info(`asdefasdfasdf for "${page.url()}"`);
+                log.info(page)
                 log.info(`Searchsssing for "${term}"`);
                 await this._waitForSearchPageToLoad();
             }
