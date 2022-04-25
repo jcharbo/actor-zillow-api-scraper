@@ -650,6 +650,7 @@ class PageHandler {
 
         const url = new URL(page.url());
         url.pathname = url.pathname === '/' ? '/homes/sold/' : url.pathname;
+        url.pathname=replace(url.pathname,'/homes/for_sale','homes/sold')
 
         for (let i = 2; i <= 20; i++) {
             /** @type {SearchQueryState} */
@@ -696,6 +697,8 @@ class PageHandler {
             const url = new URL(page.url());
 
             url.pathname = url.pathname === '/' ? '/homes/sold/' : url.pathname;
+              url.pathname=replace(url.pathname,'/homes/for_sale','homes/sold')
+
 
             url.searchParams.set('searchQueryState', JSON.stringify({
                 ...searchQueryState,
