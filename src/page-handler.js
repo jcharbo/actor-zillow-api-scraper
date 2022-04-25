@@ -269,7 +269,7 @@ class PageHandler {
             if (label === LABELS.SEARCH) {
                 const { term } = request.userData;
                 log.info(`asdefasdfasdf for "${page.url}"`);
-                log.info(`Searching for "${term}"`);
+                log.info(`Searchsssing for "${term}"`);
                 await this._waitForSearchPageToLoad();
             }
 
