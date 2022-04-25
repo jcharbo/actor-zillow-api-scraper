@@ -241,7 +241,6 @@ Apify.main(async () => {
         maxConcurrency: !queryZpid ? 1 : 10,
         handlePageFunction: async (context) => {
             const { page, request, session, response } = context;
-                     log.info('asdfasdf ' + page.url);
             const pageHandler = new PageHandler(context, globalContext, extendOutputFunction);
 
             if (!response || pageHandler.isOverItems()) {
