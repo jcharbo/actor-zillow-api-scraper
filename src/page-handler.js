@@ -246,6 +246,7 @@ class PageHandler {
             return;
         }
 
+        url=url.replace('/homes/for_sale','/homes/sold')
         return requestQueue?.addRequest({
             url,
             uniqueKey: fns.quickHash(['ZPIDS', hash]),
