@@ -483,6 +483,7 @@ console.log(page.url())
                     if(page.url().indexOf('/homes/for_sale')>0){
                     let newURL=page.url()
                     newURL=replace(newURL,'/homes/for_sale','homes/sold')
+                          console.log(newURL)
                     await page.goto(newURL)
                console.log('ba')
                     console.log(page.url())
