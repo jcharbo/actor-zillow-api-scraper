@@ -480,11 +480,13 @@ console.log(page.url())
                     ]);
                     console.log('b6')
                     console.log(page.url())
-                   // let newURL=page.url()
-                 //   newURL=replace(newURL,'/homes/for_sale','homes/sold')
-             //       await page.goto(newURL)
-             //  console.log('ba')
-               //     console.log(page.url())
+                    if(page.url().indexOf('/homes/for_sale')>0){
+                    let newURL=page.url()
+                    newURL=replace(newURL,'/homes/for_sale','homes/sold')
+                    await page.goto(newURL)
+               console.log('ba')
+                    console.log(page.url())
+                    }
                     } catch (/** @type {any} */ er) {
                     log.debug(`Insterstitial`, { message: er.message });
                     throw new Error('Search page didn\'t redirect in time');
