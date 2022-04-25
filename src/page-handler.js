@@ -270,7 +270,7 @@ console.log(  page.url())
             if (label === LABELS.SEARCH) {
                 const { term } = request.userData;
                 log.info(`Searchsssing for "${term}"`);
-                await this._waitForSearchPageToLoad();
+           //     await this._waitForSearchPageToLoad();
             }
 console.log('aaa1')
             console.log(  page.url())
