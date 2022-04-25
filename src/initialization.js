@@ -187,8 +187,7 @@ const getExtendOutputFunction = async ({ zpids, input }, minMaxDate, getSimpleRe
     const extendOutputFunction = await extendFunction({
         map: async (data) => getSimpleResult(data),
         filter: async ({ data }, { request }) => {
-                             log.info('111222333');
-                             log.info(JSON.stringify(data));
+                            
             if (isOverItems({ zpids, input })) {
                 return false;
             }
