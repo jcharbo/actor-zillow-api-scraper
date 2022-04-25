@@ -263,7 +263,7 @@ class PageHandler {
      */
     async handleQueryAndSearchPage(label) {
         const { request, session, page } = this.context;
-console.log(  page.url()
+console.log(  page.url())
         try {
             if (label === LABELS.SEARCH) {
                 const { term } = request.userData;
