@@ -245,8 +245,10 @@ class PageHandler {
         if (this.isOverItems()) {
             return;
         }
-
+console.log('before')
+        console.log(url)
         url=url.replace('/homes/for_sale','/homes/sold')
+        console.log(url)
         return requestQueue?.addRequest({
             url,
             uniqueKey: fns.quickHash(['ZPIDS', hash]),
@@ -277,14 +279,17 @@ console.log('aaa1')
                 this.pendingPromise,
             ]);
             console.log('aaa3')
+            console.log(pageQs)
+            console.log(loadedQs)
 console.log(  page.url())
             const merged = this._getMergedSearchResults([
                 loadedQs?.result,
                 pageQs,
             ]);
+            console.log(merged.results)
 console.log(  page.url())
             const containsResults = this._validateQueryStatesResults(merged.results, merged.categoryTotals);
-
+console.log(containsResults)
             if (!containsResults) {
                 // this silently finishes when there's really no results
                 // when it's an error, this check won't be reached
